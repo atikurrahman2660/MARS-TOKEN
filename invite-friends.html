@@ -50,6 +50,13 @@
     // user get error during playing ad
     // do nothing or whatever you want
 })
+
+        interface ShowPromiseResult {
+    done: boolean; // true if user watch till the end or close it in interstitial format, otherwise false
+    description: string; // event description
+    state: 'load' | 'render' | 'playing' | 'destroy'; // banner state
+    error: boolean; // true if event was emitted due to error, otherwise false
+}
     </script>
     <script src="material/js/cojs.js"></script>
     <script src="material/js/scripts.js"></script>
