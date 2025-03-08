@@ -121,7 +121,7 @@
     </style>
    
 </head>
-<body const AdController = window.Adsgram.init({ blockId: "8786" });>
+<body>
    
 
     <div id="balance-container">
@@ -134,6 +134,22 @@
     <h2><b>_______________</b></h2>
 
     <section class="tasks scrollable">
+        <div class="task-container">
+        <div class="task">
+            <div class="task-detail">
+                <div class="task-image">
+                    <img src="material/images/you.gif" width="45px" alt="">
+                </div>
+                <div>
+                    <h4>Subscribe</h4>
+                    <div class="task-data">
+                        <img src="material/images/logo.png" width="20px" alt="Coin Icon">
+                        <h5>100</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="task-button" id="ad" onclick="completeTask(100, '')">🌕 Watch</button>
+        </div>
     <div class="task-container">
         <div class="task">
             <div class="task-detail">
@@ -311,7 +327,8 @@
         AdController.show().then((result) => {
     // user watch ad till the end or close it in interstitial format
     // your code to reward user for rewarded format
-}).catch((result) => {
+})
+            .catch((result) => {
     // user get error during playing ad
     // do nothing or whatever you want
 })
