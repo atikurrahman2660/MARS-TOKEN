@@ -322,24 +322,23 @@
                 <span>BALANCE</span>
             </a>
         </nav>
-       <script>
-        const AdController = window.Adsgram.init({ blockId: "8786" });
-        AdController.show().then((result) => {
-    // user watch ad till the end or close it in interstitial format
-    // your code to reward user for rewarded format
-})
-            .catch((result) => {
-    // user get error during playing ad
-    // do nothing or whatever you want
-})
-
-        interface ShowPromiseResult {
-    done: boolean; // true if user watch till the end or close it in interstitial format, otherwise false
-    description: string; // event description
-    state: 'load' | 'render' | 'playing' | 'destroy'; // banner state
-    error: boolean; // true if event was emitted due to error, otherwise false
-}
-    </script>
+     <button id="ad">Show ad</button>
+        <script>
+            // insert your block id
+            const AdController = window.Adsgram.init({ blockId: "your-block-id" });
+            const button = document.getElementById('ad');
+            button.addEventListener('click', () => {
+                AdController.show().then((result) => {
+                    // user watch ad till the end or close it in interstitial format
+                    // your code to reward user for rewarded format
+                    alert('Reward');
+                }).catch((result) => {
+                    // user get error during playing ad
+                    // do nothing or whatever you want
+                    alert(JSON.stringify(result, null, 4));
+                })
+            })
+        </script>
     <script src="material/js/js.js"></script>
     <script src="material/js/main.js"></script>
 </body>
