@@ -1,194 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Tasks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="material/css/styles.css">
-    <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #000; 
-            color: #fff; 
-            margin: 0;
-            padding: 0;
-        }
-
-        #balance-container {
-            margin: 20px;
-            font-size: 18px;
-        }
-
-        .task-container {
-            margin: 10px auto;
-            max-width: 600px;
-        }
-
-        .task {
-            margin: 10px auto;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid #000000; 
-            border-radius: 12px;
-            background-color: #333030; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            width: 80%;
-        }
-
-        .task:hover {
-            transform: translateY(-5px);
-        }
-
-        .task-detail {
-            display: flex;
-            align-items: center;
-        }
-
-        .task-image img {
-            border-radius: 8px;
-            margin-right: 10px;
-        }
-
-        .task h4 {
-            margin: 0;
-            font-size: 18px;
-            color: #f2f2f2;
-        }
-
-        .task-data {
-            display: flex;
-            align-items: center;
-            margin-top: 8px;
-        }
-
-        .task-data img {
-            margin-right: 5px;
-        }
-
-        .task-data h5 {
-            margin: 0;
-            color: #ffcc00;
-            font-size: 18px;
-        }
-
-        .task-button {
-            background-color: #ffffff; 
-            color: rgb(0, 0, 0);
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-
-        .task-button:hover {
-            background-color: #a2aaa0;
-        }
-
-        @media (max-width: 600px) {
-            .task-container {
-                max-width: 100%;
-            }
-
-            .task-button {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
-
-            .task h4 {
-                font-size: 16px;
-            }
-           
-            
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad + External Redirect</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <br>
 
-    <div id="balance-container"><h2><b>💸</b></h2><BR>
-        <span id="balance">0</span> 🌕 your total MARS Token
-        <br>    <br>
-    </div><h2><b>comming soon !!</b></h2>
-   
-    
-    <br>
-       
-        <a href="detail.html" class="nav-item"> 
-            <i class="fas fa-info-circle"></i> 
-            
-           <span>DETAILS</span>
-        </a>
-        
-       <BR>
-    <div class="task-container">
-        <div class="task">
-            <div class="task-detail">
-                <div class="task-image">
-                    <img src="material/images/ton.png" width="45px" alt="">
-                </div>
-                <button id="ad">Show ad</button>
-                <div>
-                    <h4>Link your wallet </h4>
-                    <div class="task-data">
-                        <img src="material/images/logo.png" width="20px" alt="Coin Icon">
-                        <h5>💳</h5>
-                    </div>
-                </div>
-            </div>
-           <button onclick="window.location.href='wat.html'">CONNECT</button>
-            
+  <button onclick="showRewardAd()">Show Ad</button>
+  <div id="message"></div>
 
-        </div>
-        <br> <br>
-        <img src="material/images/logo.png" width="50%">
-                <nav class="bottom-nav">
-            <a href="home.html" class="nav-item">
-                <i class="fas fa-home"></i>
-                <span>HOME</span>
-            </a>
-            <a href="leaderboard.html" class="nav-item">
-                <i class="fas fa-trophy"></i>
-                <span>LEADERBOARD</span>
-            </a>
-            <a href="invite-friends.html" class="nav-item">
-                <i class="fas fa-user-friends"></i>
-                <span>FRIENDS</span>
-            </a>
-            <a href="task.html" class="nav-item">
-                <i class="fas fa-tasks"></i>
-                <span>TASKS</span>
-            </a>
-            <a href="balance.html" class="nav-item">
-                <i class="fas fa-wallet"></i>
-                <span>BALANCE</span>
-            </a>
-        </nav>
-     
-        <script>
-            // insert your block id
-            const AdController = window.Adsgram.init({ blockId: "8786" });
-            const button = document.getElementById('ad');
-            button.addEventListener('click', () => {
-                AdController.show().then((result) => {
-                    // user watch ad till the end or close it in interstitial format
-                    // your code to reward user for rewarded format
-                    alert('Reward');
-                }).catch((result) => {
-                    // user get error during playing ad
-                    // do nothing or whatever you want
-                    alert(JSON.stringify(result, null, 4));
-                })
-            })
-        </script>
-    <script src="material/js/js.js"></script>
-    <script src="material/js/main.js"></script>
+  <!-- ✅ AdXora script -->
+  <script src="https://adexora.com/cdn/ads.js?id=104"></script>
+
+  <script>
+    function showRewardAd() {
+      let msg = document.getElementById("message");
+      msg.innerText = "⏳ Loading ad...";
+
+      window.showAdexora()
+        .then(() => {
+          msg.innerText = "✅ Ad watched completely! Opening browser...";
+
+          // 👉 Redirect external browser (new tab/window)
+          window.open(
+            "https://pricecardboardtractor.com/agyufgx6?key=ec919b9536066b51c1b627e50804d0bc",
+            "_blank"
+          );
+        })
+        .catch((e) => {
+          msg.innerText = "❌ Ad failed or skipped: " + e;
+        });
+    }
+  </script>
+
 </body>
 </html>
