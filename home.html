@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ad + Redirect</title>
+  <title>Ad + External Redirect</title>
   <style>
     body {
       display: flex;
@@ -38,17 +38,7 @@
 
   <button onclick="showRewardAd()">Show Ad</button>
   <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
-  <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
-  <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
-  <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
-  <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
-  <div id="message"></div>
-  <button onclick="showRewardAd()">Show Ad</button>
+  <button onclick="showRewardAd()">কেমন লাগলো</button>
   <div id="message"></div>
 
   <!-- ✅ AdXora script -->
@@ -61,21 +51,29 @@
 
       window.showAdexora()
         .then(() => {
-          msg.innerText = "✅ Ad watched completely! Redirecting...";
-          // 👉 এখানে তোমার link ওপেন হবে
-          window.location.href = "https://pricecardboardtractor.com/agyufgx6?key=ec919b9536066b51c1b627e50804d0bc";
+          msg.innerText = "✅ Ad watched completely! Opening browser...";
+
+          // 👉 Redirect external browser (new tab/window)
+          window.open(
+            "https://pricecardboardtractor.com/agyufgx6?key=ec919b9536066b51c1b627e50804d0bc",
+            "_blank"
+          );
         })
         .catch((e) => {
           msg.innerText = "❌ Ad failed or skipped: " + e;
         });
     }
+    window.showAdexora()
+  .then(() => {
+    // ✅ Your reward logic here
+  })
+  .catch(e => {
+    // ❌ Handle errors here
+  });
   </script>
 
 </body>
 </html>
-
-
-
 
 
 
