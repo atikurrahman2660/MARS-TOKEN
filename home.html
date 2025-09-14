@@ -209,6 +209,14 @@ show_9051730({
     timeout: 5, 
     everyPage: false 
   } 
+    window.showAdexora()
+  .then(() => {
+    // ✅ Your reward logic here
+  })
+  .catch(e => {
+    // ❌ Handle errors here
+  });
+           
 })
 
 /*
@@ -222,18 +230,13 @@ This value is decoded as follows:
   the session will be reset, and the ads will start again.
 */
     </script>
-                <script src="https://adexora.com/cdn/ads.js?id=104"></script>
-/*window.showAdexora()
-  .then(() => {
-    // ✅ Your reward logic here
-  })
-  .catch(e => {
-    // ❌ Handle errors here
-  });*/
+   
     <script src="material/js/js.js"></script>
     <script src="material/js/main.js"></script>
-                
+    <script src="https://adexora.com/cdn/ads.js?id=104"></script>
+     
 </body>
 </html>
+
 
 
